@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 1200px;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+
+    #main {
+      width: 1000px;
+      height: 1050px;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      font-size: 32px;
+    }
+
+    #table {
+      width: 900px;
+      height: 1000px;
+      border: 1px solid #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .table {
+      width: 802px;
+      height: 900px;
+      border: 1px solid #000;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .tab-row-1 {
+      width: 100px;
+      height: 100px;
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+      position: relative;
+    }
+
+    .left-top {
+      width: calc(sqrt(100 * 100 + 100 * 100) * 1px);
+      border: 0.5px solid #000;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: left center;
+      transform: rotate(45deg);
+    }
+
+    .right-top {
+      width: calc(sqrt(100 * 100 + 100 * 100) * 1px);
+      border: 0.5px solid #000;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: right center;
+      transform: rotate(315deg);
+    }
+
+    .left-bottom {
+      width: calc(sqrt(100 * 100 + 100 * 100) * 1px);
+      border: 0.5px solid #000;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: right center;
+      transform: rotate(315deg);
+    }
+
+    .right-bottom {
+      width: calc(sqrt(100 * 100 + 100 * 100) * 1px);
+      border: 0.5px solid #000;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: left center;
+      transform: rotate(45deg);
+    }
+
+    .tab-col-8 {
+      width: 100px;
+      height: 100px;
+      border-bottom: 1px solid #000;
+      position: relative;
+    }
+
+    div {
+      position: relative;
+    }
+
+    .tab-row-5 {
+      width: 800px;
+      height: 100px;
+      border-bottom: 1px solid #000;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 52px;
+      position: relative;
+    }
+
+    .tab-row-9 {
+      width: 100px;
+      height: 100px;
+      border-right: 1px solid #000;
+      position: relative;
+    }
+
+    .flag-black {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 1px solid #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      color: #000;
+      background-color: white;
+      z-index: 1;
+    }
+
+    .flag-red {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 1px solid #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      top: 100px;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      color: red;
+      background-color: white;
+      z-index: 1;
+    }
+
+    .flag-red-last {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 1px solid #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 100px;
+      top: 100px;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      color: red;
+      background-color: white;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="title">
+    <span>棋</span>
+    <span>盤</span>
+    <span>裡</span>
+    <span>，</span>
+    <span>車</span>
+    <span>無</span>
+    <span>輪</span>
+    <span>，</span>
+    <span>馬</span>
+    <span>無</span>
+    <span>韁</span>
+    <span>，</span>
+    <span>叫</span>
+    <span>聲</span>
+    <span>將</span>
+    <span>軍</span>
+    <span>提</span>
+    <span>防</span>
+    <span>提</span>
+    <span>防</span>
+  </div>
+  <div id="main" style="align-self: center;">
+    <div id="table">
+      <div class="table">
+        <div class="tab-row-1">
+          <div class="flag-black">
+            <span>車</span>
+          </div>
+        </div>
+        <div class="tab-row-1">
+          <div class="flag-black">
+            <span>馬</span>
+          </div>
+        </div>
+        <div class="tab-row-1">
+          <div class="flag-black">
+            <span>象</span>
+          </div>
+        </div>
+        <div class="tab-row-1">
+          <div class="left-top"></div>
+          <div class="flag-black">
+            <span>士</span>
+          </div>
+        </div>
+        <div class="tab-row-1">
+          <div class="flag-black">
+            <span>將</span>
+          </div>
+          <div class="right-top"></div>
+        </div>
+        <div class="tab-row-1">
+          <div class="flag-black">
+            <span>士</span>
+          </div>
+        </div>
+        <div class="tab-row-1">
+          <div class="flag-black">
+            <span>象</span>
+          </div>
+        </div>
+        <div class="tab-col-8">
+          <div class="flag-black">
+            <span>馬</span>
+          </div>
+        </div>
+        <div>
+          <div class="flag-black">
+            <span>車</span>
+          </div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1">
+          <div class="left-bottom"></div>
+        </div>
+        <div class="tab-row-1">
+          <div class="right-bottom"></div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-col-8"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1">
+          <div class="flag-black">
+            <span>包</span>
+          </div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-col-8">
+          <div class="flag-black">
+            <span>包</span>
+          </div>
+        </div>
+        <div class="tab-row-1">
+          <div class="flag-black">
+            <span>卒</span>
+          </div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1">
+          <div class="flag-black">
+            <span>卒</span>
+          </div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1">
+          <div class="flag-black">
+            <span>卒</span>
+          </div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1">
+          <div class="flag-black">
+            <span>卒</span>
+          </div>
+        </div>
+        <div class="tab-col-8"></div>
+        <div>
+          <div class="flag-black">
+            <span>卒</span>
+          </div>
+        </div>
+        <div class="tab-row-5">
+          <span>楚河</span>
+          <span>漢界</span>
+        </div>
+        <div class="tab-row-1">
+          <div class="flag-red">
+            <span>兵</span>
+          </div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1">
+          <div class="flag-red">
+            <span>兵</span>
+          </div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1">
+          <div class="flag-red">
+            <span>兵</span>
+          </div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1">
+          <div class="flag-red">
+            <span>兵</span>
+          </div>
+        </div>
+        <div class="tab-col-8"></div>
+        <div>
+          <div class="flag-red">
+            <span>兵</span>
+          </div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1">
+          <div class="flag-red">
+            <span>炮</span>
+          </div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-col-8">
+          <div class="flag-red">
+            <span>炮</span>
+          </div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1">
+          <div class="left-top"></div>
+        </div>
+        <div class="tab-row-1">
+          <div class="right-top"></div>
+        </div>
+        <div class="tab-row-1"></div>
+        <div class="tab-row-1"></div>
+        <div class="tab-col-8"></div>
+        <div class="tab-row-9">
+          <div class="flag-red">
+            <span>俥</span>
+          </div>
+        </div>
+        <div class="tab-row-9">
+          <div class="flag-red">
+            <span>傌</span>
+          </div>
+        </div>
+        <div class="tab-row-9">
+          <div class="flag-red">
+            <span>像</span>
+          </div>
+        </div>
+        <div class="tab-row-9">
+          <div class="flag-red">
+            <span>仕</span>
+          </div>
+          <div class="left-bottom"></div>
+        </div>
+        <div class="tab-row-9">
+          <div class="flag-red">
+            <span>帥</span>
+          </div>
+          <div class="right-bottom"></div>
+        </div>
+        <div class="tab-row-9">
+          <div class="flag-red">
+            <span>仕</span>
+          </div>
+        </div>
+        <div class="tab-row-9">
+          <div class="flag-red">
+            <span>像</span>
+          </div>
+        </div>
+        <div>
+          <div class="flag-red">
+            <span>傌</span>
+          </div>
+        </div>
+        <div>
+          <div class="flag-red-last">
+            <span>俥</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="title">
+    <span>圖</span>
+    <span>畫</span>
+    <span>裡</span>
+    <span>，</span>
+    <span>龍</span>
+    <span>不</span>
+    <span>吟</span>
+    <span>，</span>
+    <span>虎</span>
+    <span>不</span>
+    <span>嘯</span>
+    <span>，</span>
+    <span>小</span>
+    <span>小</span>
+    <span>書</span>
+    <span>僮</span>
+    <span>可</span>
+    <span>笑</span>
+    <span>可</span>
+    <span>笑</span>
+  </div>
+</body>
+
+</html>
